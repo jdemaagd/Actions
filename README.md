@@ -47,6 +47,7 @@ on:
 - gh secret set secret-name --env environment-name
 - gh secret set secret-name --org org -v private
 - gh secret set secret-name --org org -v selected -r repo
+- git switch -c new-workflow
 
 ## Resources
 
