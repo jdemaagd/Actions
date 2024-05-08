@@ -37,6 +37,14 @@ on:
     - cron: '0 2 * * FRI'
 ```
 
+## Hierarchy
+
+- Organization > Repository > Environment
+- gh secret set secret-name
+- gh variable set var-name
+- gh secret set secret-name < secret.txt
+- gh variable set var-name --body config-value
+
 ## Resources
 
 - [GitHub CLI](https://cli.github.com/)
