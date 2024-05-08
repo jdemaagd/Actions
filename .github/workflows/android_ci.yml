@@ -33,7 +33,6 @@ jobs:
   unit-tests:
     name: Unit Tests
     runs-on: ubuntu-latest
-    environment: Test
     needs: build
     steps:
       - uses: actions/checkout@v4.1.5
@@ -43,11 +42,6 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: gradle
-
-      - run: |
-          echo "Hello ${{ vars.WHO_TO_GREET }} 👋 from ${{ github.actor }}."
-          sec=$ (echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
-          echo "My secret is 🤫 '$sec'."
 
       - name: Grant gradlew permission
         run: chmod +x gradlew
