@@ -57,7 +57,7 @@ jobs:
     steps:
       - run: |
           echo "Hello ${{ vars.WHO_TO_GREET }} 👋 from ${{ github.actor }}."
-          sec=$ (echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
+          sec=$(echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
           echo "My secret is 🤫 '$sec'."
 
   Load-Test:
@@ -67,7 +67,7 @@ jobs:
     steps:
       - run: |
           echo "Hello ${{ vars.WHO_TO_GREET }} 👋 from ${{ github.actor }}."
-          sec=$ (echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
+          sec=$(echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
           echo "My secret is 🤫 '$sec'."
 
   Production:
@@ -79,5 +79,5 @@ jobs:
     steps:
       - run: |
           echo "Hello ${{ vars.WHO_TO_GREET }} 👋 from ${{ github.actor }}."
-          sec=$ (echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
+          sec=$(echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
           echo "My secret is 🤫 '$sec'."
