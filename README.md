@@ -44,6 +44,10 @@ on:
 - gh variable set var-name
 - gh secret set secret-name < secret.txt
 - gh variable set var-name --body config-value
+- gh secret set secret-name --env environment-name
+- gh secret set secret-name --org org -v private
+- gh secret set secret-name --org org -v selected -r repo
+- git switch -c new-workflow
 
 ## Resources
 

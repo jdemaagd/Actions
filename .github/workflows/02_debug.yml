@@ -1,0 +1,12 @@
+name: Authoring and Debugging
+
+on: [pull_request, workflow_dispatch]
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Workflow triggered in branch '${{ github.ref }}'."
+          echo "Workflow triggered by event '${{ github.event_name }}'."
+          echo "Workflow triggered by actor '${{ github.actor }}'."
