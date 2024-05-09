@@ -1,5 +1,5 @@
-name: 'Docker Action Recipe'
-description: 'Greet someone'
+name: 'Composite Action Recipe'
+description: 'Greets the user and returns 42.'
 inputs:
   who-to-greet:
     description: 'Who to greet'
@@ -7,9 +7,15 @@ inputs:
     default: 'World'
 outputs:
   answer:
-    description: 'The answer to everything (always 42)'
+    description: "Answer to life, the universe, and everything"
+    value: ${{ steps.deep-thought.outputs.answer }}
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.who-to-greet }}
+  using: "composite"
+  steps:
+    - name: Awesome bash script action
+      id: deep-thought
+      shell: bash
+      run: |
+        echo "Hello '${{ inputs.who-to-greet }}'."
+        echo "answer=42" >> $GITHUB_OUTPUT
+        echo "So long, and thanks for all the fish."

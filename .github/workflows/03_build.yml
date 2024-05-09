@@ -1,6 +1,8 @@
 name: Building GitHub Actions
 
-on: [push]
+#on: [push]
+on:
+  workflow_dispatch
 
 jobs:
   ci:
@@ -19,3 +21,11 @@ jobs:
         run: |
           echo "::error file=entrypoint.sh,line=4,title=Error in container::The answer was not expected"
           exit 1
+
+    # steps:
+    #   - name: Set the value
+    #     id: step_one
+    #     run: |
+    #       echo "action_state=yellow" >> "$GITHUB_ENV"
+    #   - run: |
+    #       echo "${{ env.action_state }}" # This will output 'yellow'

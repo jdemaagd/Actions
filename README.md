@@ -91,6 +91,14 @@ on:
 - JavaScript actions
 - Composite actions
 
+## TypeScript action template
+
+- npm install
+- npm test
+- npm run bundle > run every time .ts file is modified
+- npx prettier . --check
+- npx prettier . --write
+
 ## Resources
 
 - [GitHub CLI](https://cli.github.com/)
