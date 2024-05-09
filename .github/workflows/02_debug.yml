@@ -1,16 +1,12 @@
 name: Authoring and Debugging
 
-# on: [pull_request, workflow_dispatch]
-on:
-  push:
-    branches: [ main, dev ]
-  pull_request:
-    branches: [ main, dev ]
-  workflow_dispatch:
+on: [pull_request, workflow_dispatch]
 
 jobs:
   job1:
     runs-on: ubuntu-latest
+    # container: 
+    #   image: custom-image:latest
     permissions:
       contents: read
       pull-requests: write

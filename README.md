@@ -53,6 +53,7 @@ on:
 - gh secret set secret-name --org org -v selected -r repo
 - gh pr create --fill
 - gh variable set ACTIONS_STEP_DEBUG --body true
+- gh variable delete ACTIONS_STEP_DEBUG
 
 ## Injection Attack
 
@@ -66,8 +67,24 @@ on:
 - debug: only message that cannot annotate files
 - workflow command only accepts message as a parameter
 
+## Act with Docker
+
+- act pull_request -l > list all workflows and jobs for corresponding trigger
+- act pull_request -n > perform dry run
+- act pull_request > execute workflow in container
+- act -s GITHUB_TOKEN=[insert personal access token]
+- act -s GITHUB_TOKEN="$(gh auth token)"
+
 ## Resources
 
 - [GitHub CLI](https://cli.github.com/)
 - [GitHub Marketplace](https://github.com/marketplace)
 - [Workflow Triggers](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
+- [Act: run workflow locally](https://github.com/nektos/act)
+- [Install Act](https://nektosact.com/)
+- [TypeScript Action](https://github.com/actions/typescript-action)
+
+
+Error: Error response from daemon: pull access denied for custom-image, 
+repository does not exist or may require 'docker login': 
+denied: requested access to the resource is denied
