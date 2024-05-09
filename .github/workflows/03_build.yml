@@ -1,6 +1,12 @@
 name: Building GitHub Actions
 
+<<<<<<< HEAD
+#on: [push]
+on:
+  workflow_dispatch
+=======
 on: [push]
+>>>>>>> main
 
 jobs:
   ci:
@@ -8,6 +14,28 @@ jobs:
     steps:
       - uses: actions/checkout@v4.1.5
       - name: Run my own container action
+<<<<<<< HEAD
+        id: my-action
         uses: ./
         with:
           who-to-greet: '@jdemaagd'
+      - name: Output the answer
+        run: echo "The answer is ${{ steps.my-action.outputs.answer }}"
+      - name: Test the container
+        if: ${{ steps.my-action.outputs.answer != 42 }}
+        run: |
+          echo "::error file=entrypoint.sh,line=4,title=Error in container::The answer was not expected"
+          exit 1
+
+    # steps:
+    #   - name: Set the value
+    #     id: step_one
+    #     run: |
+    #       echo "action_state=yellow" >> "$GITHUB_ENV"
+    #   - run: |
+    #       echo "${{ env.action_state }}" # This will output 'yellow'
+=======
+        uses: ./
+        with:
+          who-to-greet: '@jdemaagd'
+>>>>>>> main

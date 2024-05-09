@@ -82,6 +82,23 @@ on:
 - docker run $(docker build -q .)
 - docker run $(docker build -q .) foo bar
 
+## Actions
+
+- Docker container actions
+    - run on Linux only
+    - contain all their dependencies in the container
+    - slower because of time to retrieve/build image and start container
+- JavaScript actions
+- Composite actions
+
+## TypeScript action template
+
+- npm install
+- npm test
+- npm run bundle > run every time .ts file is modified
+- npx prettier . --check
+- npx prettier . --write
+
 ## Resources
 
 - [GitHub CLI](https://cli.github.com/)
