@@ -1,10 +1,16 @@
+<<<<<<< HEAD
 name: 'Composite Action Recipe'
 description: 'Greets the user and returns 42.'
+=======
+name: 'Docker Action Recipe'
+description: 'Greet someone'
+>>>>>>> main
 inputs:
   who-to-greet:
     description: 'Who to greet'
     required: true
     default: 'World'
+<<<<<<< HEAD
 outputs:
   answer:
     description: "Answer to life, the universe, and everything"
@@ -19,3 +25,10 @@ runs:
         echo "Hello '${{ inputs.who-to-greet }}'."
         echo "answer=42" >> $GITHUB_OUTPUT
         echo "So long, and thanks for all the fish."
+=======
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
+>>>>>>> main
