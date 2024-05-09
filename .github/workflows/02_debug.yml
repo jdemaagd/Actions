@@ -17,6 +17,7 @@ jobs:
           echo "Workflow triggered by actor '${{ github.actor }}'."
 
       - uses: actions/checkout@v4.1.5
+
       - run: |
           echo "::debug::This is a debug message."
           echo "::notice::This is a notice message."

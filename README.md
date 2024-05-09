@@ -83,8 +83,3 @@ on:
 - [Act: run workflow locally](https://github.com/nektos/act)
 - [Install Act](https://nektosact.com/)
 - [TypeScript Action](https://github.com/actions/typescript-action)
-
-
-Error: Error response from daemon: pull access denied for custom-image, 
-repository does not exist or may require 'docker login': 
-denied: requested access to the resource is denied
