@@ -82,6 +82,15 @@ on:
 - docker run $(docker build -q .)
 - docker run $(docker build -q .) foo bar
 
+## Actions
+
+- Docker container actions
+    - run on Linux only
+    - contain all their dependencies in the container
+    - slower because of time to retrieve/build image and start container
+- JavaScript actions
+- Composite actions
+
 ## Resources
 
 - [GitHub CLI](https://cli.github.com/)
