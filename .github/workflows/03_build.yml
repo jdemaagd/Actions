@@ -1,0 +1,13 @@
+name: Building GitHub Actions
+
+on: [push]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.1.5
+      - name: Run my own container action
+        uses: ./
+        with:
+          who-to-greet: '@jdemaagd'
