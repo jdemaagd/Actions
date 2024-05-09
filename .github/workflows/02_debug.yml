@@ -1,6 +1,8 @@
 name: Authoring and Debugging
 
-on: [pull_request, workflow_dispatch]
+# on: [pull_request, workflow_dispatch]
+on:
+  workflow_dispatch
 
 jobs:
   job1:

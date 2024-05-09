@@ -74,6 +74,13 @@ on:
 - act pull_request > execute workflow in container
 - act -s GITHUB_TOKEN=[insert personal access token]
 - act -s GITHUB_TOKEN="$(gh auth token)"
+- create ~/.actrc
+    - add this line > `--container-daemon-socket -`
+
+## Docker
+
+- docker run $(docker build -q .)
+- docker run $(docker build -q .) foo bar
 
 ## Resources
 
