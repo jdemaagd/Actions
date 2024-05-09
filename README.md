@@ -40,6 +40,10 @@ on:
 ## Hierarchy
 
 - Organization > Repository > Environment
+
+## GitHub CLI Commands
+
+- git switch -c new-workflow
 - gh secret set secret-name
 - gh variable set var-name
 - gh secret set secret-name < secret.txt
@@ -47,8 +51,9 @@ on:
 - gh secret set secret-name --env environment-name
 - gh secret set secret-name --org org -v private
 - gh secret set secret-name --org org -v selected -r repo
-- git switch -c new-workflow
 - gh pr create --fill
+- gh variable set ACTIONS_STEP_DEBUG --body true
+- gh variable delete ACTIONS_STEP_DEBUG
 
 ## Injection Attack
 
@@ -57,8 +62,24 @@ on:
 - Script `ls $GITHUB_WORKSPACE` will execute without error
 - from there, you can find other ways to inject more harmful script
 
+## Debugging
+
+- debug: only message that cannot annotate files
+- workflow command only accepts message as a parameter
+
+## Act with Docker
+
+- act pull_request -l > list all workflows and jobs for corresponding trigger
+- act pull_request -n > perform dry run
+- act pull_request > execute workflow in container
+- act -s GITHUB_TOKEN=[insert personal access token]
+- act -s GITHUB_TOKEN="$(gh auth token)"
+
 ## Resources
 
 - [GitHub CLI](https://cli.github.com/)
 - [GitHub Marketplace](https://github.com/marketplace)
 - [Workflow Triggers](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows)
+- [Act: run workflow locally](https://github.com/nektos/act)
+- [Install Act](https://nektosact.com/)
+- [TypeScript Action](https://github.com/actions/typescript-action)
