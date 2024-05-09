@@ -48,6 +48,14 @@ on:
 - gh secret set secret-name --org org -v private
 - gh secret set secret-name --org org -v selected -r repo
 - git switch -c new-workflow
+- gh pr create --fill
+
+## Injection Attack
+
+- Creating PR > "Hi";ls $GITHUB_WORKSPACE;echo "-"
+- Executes following command > echo "Hi";ls $GITHUB_WORKSPACE;echo "-"
+- Script `ls $GITHUB_WORKSPACE` will execute without error
+- from there, you can find other ways to inject more harmful script
 
 ## Resources
 
