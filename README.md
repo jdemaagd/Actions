@@ -40,6 +40,10 @@ on:
 ## Hierarchy
 
 - Organization > Repository > Environment
+
+## GitHub CLI Commands
+
+- git switch -c new-workflow
 - gh secret set secret-name
 - gh variable set var-name
 - gh secret set secret-name < secret.txt
@@ -47,8 +51,8 @@ on:
 - gh secret set secret-name --env environment-name
 - gh secret set secret-name --org org -v private
 - gh secret set secret-name --org org -v selected -r repo
-- git switch -c new-workflow
 - gh pr create --fill
+- gh variable set ACTIONS_STEP_DEBUG --body true
 
 ## Injection Attack
 
@@ -56,6 +60,11 @@ on:
 - Executes following command > echo "Hi";ls $GITHUB_WORKSPACE;echo "-"
 - Script `ls $GITHUB_WORKSPACE` will execute without error
 - from there, you can find other ways to inject more harmful script
+
+## Debugging
+
+- debug: only message that cannot annotate files
+- workflow command only accepts message as a parameter
 
 ## Resources
 
