@@ -1,10 +1,10 @@
 name: Environments
 
 on:
-  push:
-    branches: [ main, dev ]
-  pull_request:
-    branches: [ main, dev ]
+  # push:
+  #   branches: [ main, dev ]
+  # pull_request:
+  #   branches: [ main, dev ]
   workflow_dispatch:
 
 jobs:
@@ -50,7 +50,7 @@ jobs:
           sec=$(echo ${{ secrets.MY_SECRET }} | sed 's/./& /g')
           echo "My secret is 🤫 '$sec'."
 
-  Production:
+  production:
     runs-on: ubuntu-latest
     environment:
       name: Production
