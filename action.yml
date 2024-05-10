@@ -20,7 +20,7 @@ runs:
 #        echo "answer=42" >> $GITHUB_OUTPUT
 #        echo "So long, and thanks for all the fish."
     - name: Awesome github script action
-      uses: actions/github-script@v7.0.1
+      uses: actions/github-script@v6
       with:
         script: |
           var whoToGreet = core.getInput('who-to-greet')
