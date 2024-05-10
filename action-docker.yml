@@ -10,6 +10,6 @@ outputs:
     description: 'The answer to everything (always 42)'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'Dockerfile1'
   args:
     - ${{ inputs.who-to-greet }}
