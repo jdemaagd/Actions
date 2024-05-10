@@ -1,5 +1,10 @@
 name: CI Workflow
-on: [push, pull_request]
+
+#on: [push, pull_request]
+on:
+  issues:
+    types: [opened]
+
 jobs:
   ci-job:
     runs-on: ubuntu-latest
