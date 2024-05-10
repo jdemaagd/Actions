@@ -1,12 +1,8 @@
 name: Building GitHub Actions
 
-<<<<<<< HEAD
 #on: [push]
 on:
   workflow_dispatch
-=======
-on: [push]
->>>>>>> main
 
 jobs:
   ci:
@@ -14,7 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4.1.5
       - name: Run my own container action
-<<<<<<< HEAD
         id: my-action
         uses: ./
         with:
@@ -34,8 +29,3 @@ jobs:
     #       echo "action_state=yellow" >> "$GITHUB_ENV"
     #   - run: |
     #       echo "${{ env.action_state }}" # This will output 'yellow'
-=======
-        uses: ./
-        with:
-          who-to-greet: '@jdemaagd'
->>>>>>> main
