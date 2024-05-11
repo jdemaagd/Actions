@@ -19,6 +19,19 @@
 - docker build -t simple-ubuntu-runner .
 - docker run -d --rm -e RUNNER_NAME=Runner1 -e TOKEN={TOKEN} simple-ubuntu-runner
 
+## Authentication
+
+```
+$ curl -L \
+> -X POST \
+> -H "Accept: application/vnd.github+json" \
+> -H "Authorization: Bearer <YOUR-PAT>" \
+> -H "X-GitHub-Api-Version: 2022-11-28" \
+> https://api.github.com/repos/{OWNER}/{REPO}/actions/runners/registration-token
+
+$ TOKEN=$(<curl command> | jq .token --raw-output)
+```
+
 ## Cleanup
 
 - docker system prune --force
